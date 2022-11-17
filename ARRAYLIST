@@ -1,0 +1,37 @@
+/* Q1.. ARRAY LIST & FOR EACH LOOP*/
+
+import java.util.ArrayList;
+
+import java.util.Scanner;
+
+
+public class Main
+{
+	
+	public static void main(String[] args) {
+
+		ArrayList<String> Animals = new ArrayList<String>();
+
+		Animals.add("Horse");
+
+		Animals.add("Cow");
+
+		Animals.add("Sheep");
+
+		Animals.add("Donkey");
+
+		Animals.add("Dog");
+
+		Animals.add("Cat");
+
+		System.out.println("\nANIMAL LIST >> ");
+
+		for(String i:Animals){
+
+		    System.out.println(i);
+
+		}
+
+	}
+
+}
