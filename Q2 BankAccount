@@ -1,0 +1,134 @@
+/* Q2.. BANK ACCOUNT WITH EXCEPTION HANDLING*/
+
+import java.util.Scanner;
+
+
+class BankAccount{
+
+    public static int accno;
+
+    public static double balance=10000;
+
+    BankAccount(){
+
+        System.out.println("\nWelcome to the bank!");
+
+    }
+
+    public static void show(int x){
+
+        accno = x;
+
+        System.out.println("\nAccount No : "+accno);
+
+        System.out.println("\nBalance Amount : "+balance);
+
+    }
+
+    public static void deposit(int x, double y){
+
+        accno = x;
+
+        balance = balance+y;
+
+        System.out.println("\nAccount No : "+accno);
+
+        System.out.println("\nNew Balance Amount : "+balance);
+
+    }
+
+    public static void withdraw(int x, double y){
+
+        accno = x;
+
+        balance = balance-y;
+
+        System.out.println("\nAccount No : "+accno);
+
+        System.out.println("\nBalance Amount : "+balance);
+
+    }
+
+}
+   
+public class Main
+{
+
+	public static void main(String[] args) {
+
+		BankAccount b = new BankAccount();
+
+		int acc;
+
+		int i,n=1;
+
+		double amt;
+
+		System.out.println("\nEnter Account number : ");
+
+		Scanner sc = new Scanner(System.in);
+
+		acc = sc.nextInt();
+
+		
+		do{
+
+		    System.out.println("Enter Your Choice : 1:Display Balance \t2:Cash Deposit \t3:Withdrawal\t4:Exit");
+
+		    n=sc.nextInt();
+
+		   switch(n){
+
+		       case 1:
+
+		           b.show(acc);
+
+		           break;
+
+		      case 2:
+
+		          System.out.println("Enter amount : ");
+
+		          amt= sc.nextDouble();
+
+		          b.deposit(acc,amt);
+
+		          break;
+
+		      case 3:
+
+		          System.out.println("Enter amount : ");
+
+		          amt= sc.nextDouble();
+
+		          if(amt>b.balance){
+
+		              throw new ArithmeticException ("\n Access Denied.");
+ 
+		          }
+
+		          else
+
+		            b.withdraw(acc,amt);
+
+		          break;
+
+		      case 4:
+
+		          System.out.println("Thank you for banking with us!");
+
+		          break;
+
+		      default:
+
+		          System.out.println("Thank you for banking with us!");
+
+		          break;
+    
+		   }
+
+		}while(n!=4);
+
+	}
+
+}
