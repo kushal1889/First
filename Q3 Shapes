@@ -1,0 +1,177 @@
+import java.util.Scanner;
+
+class Shape{
+
+    public static void draw(){
+
+        System.out.println("Enter Required Parameters ");
+
+    }
+
+    public static void erase(){
+
+        System.out.println("Given Shapes deleted");
+
+    }
+
+}
+   
+class Circle extends Shape{
+
+    public static int radius;
+
+    public static void draw(int r){
+
+        System.out.println("Circle of radius "+r+" has been drawn!");
+
+    }
+
+    public static void erase(){
+
+        System.out.println("Circle deleted");
+
+    }
+
+}//Method overridden
+
+class Square extends Shape{
+
+    public static int side;
+
+    public static void draw(int a){
+
+        System.out.println("Square of side "+a+" has been drawn!");
+
+    }
+
+    public static void erase(){
+
+        System.out.println("Square deleted");
+
+    }
+
+}//Method overridden
+
+class Triangle extends Shape{
+
+    public static int side1,side2,side3;
+
+    public static void draw(int a,int b,int c){
+
+        System.out.println("Triangle of sides "+a+", "+b+", "+c+" has been drawn!");
+
+    }
+
+    public static void erase(){
+
+        System.out.println("Triangle deleted");
+
+    }
+
+}//Method overridden
+
+public class Main
+{
+
+	public static void main(String[] args) {
+
+		Shape sh = new Shape();
+
+		Circle c = new Circle();
+
+		Square s = new Square();
+
+		Triangle t = new Triangle();
+
+		int n,a,b,r;
+
+		
+do{
+
+		    System.out.println("\nSelect Shape To Draw: 1:Circle\t2:Square\t3:Triangle");
+
+		    System.out.println("Select Shape To Erase: 4:Circle\t5:Square\t6:Triangle");
+
+		    System.out.println("7:Erase All\t8:Exit");
+
+		    Scanner sc = new Scanner(System.in);
+
+		    n=sc.nextInt();
+
+		   switch(n){
+
+		       case 1:
+
+		           System.out.println("\nEnter Radius of a Circle: ");
+
+		           r=sc.nextInt();
+
+		           c.draw(r);
+
+		           break;
+
+		      case 2:
+
+		          System.out.println("\nEnter Side of a Square : ");
+
+		           r=sc.nextInt();
+
+		           s.draw(r);
+
+		           break;
+
+		      case 3:
+
+		          System.out.println("\nEnter Sides of a Triangle : ");
+
+		           r=sc.nextInt();
+
+		           a=sc.nextInt();
+
+		           b=sc.nextInt();
+
+		           t.draw(a,b,r);
+
+		           break;
+
+		      case 4:
+
+		          c.erase();
+
+		          break;
+
+		      case 5:
+
+		          s.erase();
+
+		          break;
+
+		      case 6:
+
+		          t.erase();
+
+		          break;
+
+		      case 7:
+
+		          sh.erase();
+
+		          break;
+
+		      case 8:
+
+		          break;
+
+		      default:
+
+		          System.out.println("Invalid Input");
+
+		          break;
+    
+		   }
+
+		}while(n!=8);
+
+	}
+
+}
