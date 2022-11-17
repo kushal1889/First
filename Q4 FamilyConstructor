@@ -1,0 +1,88 @@
+import java.util.Scanner;
+class Grandparent{
+
+    public static String grandFatherName;
+
+    public static String grandMotherName;
+
+    public Grandparent(String grandFatherName,String grandMotherName){
+
+        this.grandFatherName=grandFatherName;
+
+        this.grandMotherName=grandMotherName;
+
+        System.out.println("Grandpa is "+grandFatherName+" & Granny is "+grandMotherName);
+
+    }
+
+}
+
+class Parent extends Grandparent{
+
+    public static String fatherName;
+
+    public static String motherName;
+
+    public Parent(String fatherName,String motherName,String grandFatherName,String grandMotherName){
+
+        this.fatherName=fatherName;
+
+        this.motherName=motherName;
+
+        this.grandFatherName=grandFatherName;
+
+        this.grandMotherName=grandMotherName;
+
+        System.out.println("Father is "+fatherName+" & Mother is "+motherName);
+
+        Parent(grandFatherName,grandMotherName);
+
+    }
+
+    Parent(String grandFatherName,String grandMotherName){
+
+        this.grandFatherName=grandFatherName;
+
+        this.grandMotherName=grandMotherName;
+
+        Grandparent(grandFatherName,grandMotherName);
+
+    }
+
+}
+
+public class Child extends Parent{
+
+    public static void main(String[] args) {
+
+        String gf,gm,f,m;
+
+        Child c = new Child();
+
+        System.out.println("Welcome To Family");
+
+        System.out.println("Enter Grandfather's Name : ");
+
+        Scanner sc = new Scanner(System.in);
+
+        gf=sc.nextLine();
+
+        System.out.println("Enter Grandmother's Name : ");
+
+        gm=sc.nextLine();
+
+        System.out.println("Enter Father's Name : ");
+
+        f=sc.nextLine();
+
+        System.out.println("Enter Mother's Name : ");
+
+        m=sc.nextLine();
+
+        c.GrandParent(gf,gm);
+
+        c.Parent(f,m,gf,gm);
+
+    }
+
+}
